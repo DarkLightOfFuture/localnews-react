@@ -26,14 +26,14 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Local News</h1>
+      <h1>Local News { selectedCity == "all" && <button onClick={() => setSelectedCity("all")}>Reset location</button>}</h1>
       <select value={selectedCity} onChange={e => setSelectedCity(e.target.value)}>
         <option value="all">Choose your location</option>
         {cities.map(city => (
           <option key={city.name} value={city.name}>{city.name}</option>
         ))}
       </select>
-      <h2>Or click city under any article <button onClick={() => setSelectedCity("all")}>Reset location</button></h2><br/>
+      <h2>... Or click city under any article</h2><br/>
 
       {loading ? <p>Loading...</p> : (
         <div className="news-list">
