@@ -28,7 +28,7 @@ function App() {
     <div className="app">
       <h1>Local News</h1>
       <select value={selectedCity} onChange={e => setSelectedCity(e.target.value)}>
-        <option value="all">All Cities</option>
+        <option value="all">Choose your location</option>
         {cities.map(city => (
           <option key={city.name} value={city.name}>{city.name}</option>
         ))}
