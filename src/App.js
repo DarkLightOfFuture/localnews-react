@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_URL}/api/cities`, { method: "GET" })
       .then(response => response.json())
-      .then(data => { console.log(data); setCities(data) })
+      .then(data => setCities(data))
       .catch(error => console.error('Error:', error));
   }, []);
 
