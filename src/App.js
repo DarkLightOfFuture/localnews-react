@@ -33,15 +33,17 @@ function App() {
           <option key={city.name} value={city.name}>{city.name}</option>
         ))}
       </select>
-      
+      <h2>Or click city under any article</h2>
+
       {loading ? <p>Loading...</p> : (
         <div className="news-list">
           {news.map(item => (
             <div key={item.id} className="news-item">
               <h3>{item.title}</h3>
               <p>{item.content}</p>
-              {item.city ? <small style={{ color: "gray", textDecoration: "underline" }}>{item.city.name}</small>
-                : <small style={{ color: "red", fontWeight: "bold" }}>Global news</small>}
+              {item.city ? <small style={{ color: "gray", textDecoration: "underline", cursor: "pointer" }}
+                onClick={() => setSelectedCity(item.city.name)}>{item.city.name}</small>
+                  : <small style={{ color: "red", fontWeight: "bold" }}>Global news</small>}
             </div>
           ))}
         </div>
