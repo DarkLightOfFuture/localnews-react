@@ -33,7 +33,7 @@ function App() {
           <option key={city.name} value={city.name}>{city.name}</option>
         ))}
       </select>
-      { selectedCity == "all" && <h2>... Or click city under any article</h2><br/>}
+      { selectedCity == "all" && <h2>... Or click city under any article</h2> } <br/>
 
       {loading ? <p>Loading...</p> : (
         <div className="news-list">
