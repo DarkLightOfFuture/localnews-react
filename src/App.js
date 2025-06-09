@@ -33,7 +33,7 @@ function App() {
           <option key={city.name} value={city.name}>{city.name}</option>
         ))}
       </select>
-      <h2>Or click city under any article</h2>
+      <h2>Or click city under any article <button onClick={() => setSelectedCity("all")}>Reset location</button></h2><br/>
 
       {loading ? <p>Loading...</p> : (
         <div className="news-list">
