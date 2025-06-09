@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`${process.env.SERVER_URL}/api/cities`, { method: "GET" })
+    fetch(`${process.env.REACT_APP_SERVER_URL}/api/cities`, { method: "GET" })
       .then(response => response.json())
       .then(data => { console.log(data); setCities(data) })
       .catch(error => console.error('Error:', error));
@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     if (cities.length > 0) {
       setLoading(true);
-      fetch(`${process.env.SERVER_URL}/api/news?city=${selectedCity}`)
+      fetch(`${process.env.REACT_APP_SERVER_URL}/api/news?city=${selectedCity}`)
         .then(response => response.json())
         .then(data => setNews(data))
         .finally(() => setLoading(false));
